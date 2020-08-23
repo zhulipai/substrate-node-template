@@ -1,20 +1,19 @@
 # Substrate Developer Set-Up Guide
 
-The purpose of this document is to provide developers with the information they need to set-up a Substrate development
-environment. For each operating system described below, a standard Docker container has been used to verify that the
-provided steps are sufficient to build and run the template node in this repository.
+The purpose of this document is to provide developers of all levels the information they need to set-up a Substrate development
+environment. For each operating system, a standard Docker container has been used to verify that the
+provided steps successfully build and run the node template in this repository. The estimated set up time is 45 minutes.
 
 ## Ubuntu
 
-This set-up was verified using [the standard Ubuntu Docker container](https://hub.docker.com/_/ubuntu). This container
-defaults to a root user, but most developers will probably need to preface the following commands with `sudo` in order
-to execute them with the necessary privileges.
+This set-up is verified using [the standard Ubuntu Docker container](https://hub.docker.com/_/ubuntu). The container
+defaults to a root user, however most developers may need to preface the following commands with `sudo` in order
+to execute them with root privileges.
 
 ```shell
 apt update
-# May prompt for location information
 apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl
-# Select 1 to proceed with standard installation
+# Select 1 to proceed with installation
 curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
 rustup default stable
@@ -27,7 +26,7 @@ rustup update
 
 This set-up was verified using [the standard Arch Linux Docker container](https://hub.docker.com/_/archlinux). This
 container defaults to a root user, but most developers will probably need to preface the following commands with `sudo`
-in order to execute them with the necessary privileges.
+in order to execute them with root privileges.
 
 ```shell
 pacman -Syu --needed --noconfirm cmake gcc openssl-1.0 pkgconf git clang
@@ -44,5 +43,4 @@ rustup update
 
 ## Unsupported Operating Systems
 
-Any operating system not explicitly described by this document should be considered unsupported for Substrate
-development.
+Any operating system not explicitly described by this document should be considered unsupported by Substrate.
