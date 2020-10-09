@@ -17,9 +17,10 @@ apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-de
 curl https://sh.rustup.rs -sSf | sh
 source $HOME/.cargo/env
 rustup default stable
-rustup update nightly
-rustup target add wasm32-unknown-unknown --toolchain nightly
-rustup update
+rustup install nightly-2020-10-06
+# find your nightly toolchain
+rustup toolchain list
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06-x86_64-unknown-linux-gnu
 ```
 
 ## Arch Linux
